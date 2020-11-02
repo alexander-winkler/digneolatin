@@ -65,3 +65,13 @@ API access
 
 ## VIAF
 
+# Lexical resources
+
+## J. Ramminger: Neulatein.de
+
+[Dictionary](http://nlw.renaessancestudier.org) comprising more than 21.000 words, no API.
+
+
+# Community
+
++ [Blog](https://jramminger.github.io/) by Johann Ramminger about OCR/digital Neo-Latin
