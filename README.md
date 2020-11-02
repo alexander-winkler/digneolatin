@@ -1,6 +1,15 @@
 # digneolatin – Digital Tools and Neo-Latin texts
 
+![USTC Timeline](img/USTC_Timeline-lang_latin_2020-11-02.png)
+
+# In the chart room - bibliographic tools
+
+## USTC
+
+Wide collection of bibliographic data, good search functionalities, no API
+
 # Digitizing the *mare magnum*
+
 
 ## OCR
 
