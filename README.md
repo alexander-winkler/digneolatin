@@ -21,7 +21,7 @@ A good way to get an overview of what was written and published in the early mod
 
 ## USTC
 
-Wide collection of bibliographic data, good search functionalities, no API
+The [USTC](https://www.ustc.ac.uk/) offers a very wide collection of bibliographic data and, via the web form, useful search functionalities. Unfortunately 
 
 ## VD16, VD17, VD18
 
@@ -143,8 +143,69 @@ For digital Neo-Latin texts from various corpora to become citable and interoper
 
 # Authority files
 
+## Wikidata
+
+Wikidata is a treasuretrove for every kind of information. Thanks to its SPARQL-endpoint, highly complex queries are possible. A rather simple expamle (many more can be found [here](https://www.wikidata.org/wiki/Wikidata:SPARQL_query_service/queries) and tried out [here](https://query.wikidata.org/)):
+
+```SPARQL
+
+SELECT ?authorLabel ?title ?year 
+WHERE {
+  ?book wdt:P407 wd:Q397.
+  ?book wdt:P31 wd:Q7725634 .
+  ?book wdt:P50 ?author.
+  ?book wdt:P1476 ?title. 
+  ?book wdt:P577 ?year.
+  FILTER ( year(?year) > 1600 ).
+  FILTER ( year(?year) < 1800 ).
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "en" .
+   }
+  }
+```
+
+The query is a GET request and can thus be integrated in a simple Python script, e.g.:
+
+```python
+
+import requests
+
+wikidata_endpoint = "https://query.wikidata.org/sparql"
+query = """
+SELECT ?authorLabel ?title ?year 
+WHERE {
+  ?book wdt:P407 wd:Q397.
+  ?book wdt:P31 wd:Q7725634 .
+  ?book wdt:P50 ?author.
+  ?book wdt:P1476 ?title. 
+  ?book wdt:P577 ?year.
+  FILTER ( year(?year) > 1600 ).
+  FILTER ( year(?year) < 1800 ).
+  SERVICE wikibase:label {
+    bd:serviceParam wikibase:language "en" .
+   }
+  }
+ 
+        """
+
+parameters = {
+        'query' : query,
+        'format' : 'JSON'
+        }
+
+headers = {"Accept" : "application/json"}
+
+res = requests.get(wikidata_endpoint,headers=headers,params=parameters)
+
+print(res.text)
+
+```
+
 ## VIAF
 
+The documentation of the VIAF API can be found [here](https://www.oclc.org/developer/develop/web-services/viaf/authority-cluster.en.html)
+
+Geographic
 ## Geographic data
 
 ??

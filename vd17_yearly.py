@@ -22,7 +22,7 @@ for year in years:
     publication_numbers.append(int(hits))
 
 fig, ax = plt.subplots()
-ax.plot(years,publication_numbers)
+ax.bar(years,publication_numbers)
 ax.set(xlabel='Year', ylabel='Books published',
                title='Latin books published in Nuremberg in the 17th century')
 fig.savefig("vd17_nuremberg.png")
