@@ -104,6 +104,17 @@ API access
 ## Lemmatizer / POS-Tagger
 
 + [LatMor](https://www.cis.uni-muenchen.de/~schmid/tools/LatMor/)
++ [LEMLAT](https://github.com/CIRCSE/LEMLAT3)
++ William Whitaker’s Words
++ [Morpheus](https://github.com/PerseusDL/morpheus)
++ PROIEL
++ Parsley
++ [Tree Tagger](https://www.cis.uni-muenchen.de/~schmid/tools/TreeTagger/)
++ [CST’s lemmatizer](https://cst.dk/online/lemmatiser/uk/)
++ Sparv
++ [Collatinus](https://github.com/biblissima/collatinus)
++ [Lamonpy](https://github.com/bab2min/lamonpy)
+
 
 ## Word2Vec
 
